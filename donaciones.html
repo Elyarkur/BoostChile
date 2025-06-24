@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apoyar - Boost Sport Chile</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🚀</text></svg>">
+
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        html { scroll-behavior: smooth; }
+        .hover-lift { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .hover-lift:hover { transform: translateY(-6px); box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1); }
+        .gradient-text { background: linear-gradient(to right, #3b82f6, #1e40af); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .nav-active { color: #2563eb; font-weight: 700; }
+        .progress-bar { transition: width 0.5s ease-in-out; }
+    </style>
+</head>
+<body class="bg-blue-50 text-gray-800">
+
+    <!-- =========== Header =========== -->
+    <header class="bg-white/90 backdrop-blur-lg shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <a href="index.html" class="text-3xl font-black gradient-text">🚀 Boost Sport Chile</a>
+            <div class="hidden md:flex space-x-6 items-center">
+                <a href="talentos.html" class="text-gray-600 hover:text-blue-600 font-semibold transition-colors">Talentos</a>
+                <a href="donaciones.html" class="nav-active font-semibold transition-colors">Apoyar</a>
+                <a href="scouting.html" class="text-gray-600 hover:text-blue-600 font-semibold transition-colors">Scouting</a>
+                <a href="comunidad.html" class="text-gray-600 hover:text-blue-600 font-semibold transition-colors">Comunidad</a>
+                <a href="contacto.html" class="bg-blue-600 text-white px-5 py-2 rounded-full font-bold hover:bg-blue-700 transition-all shadow-md hover-lift">Contacto</a>
+            </div>
+            <!-- Mobile Menu button -->
+        </nav>
+    </header>
+
+    <!-- =========== Main Content =========== -->
+    <main>
+        <section id="donaciones" class="py-20 px-6">
+            <div class="container mx-auto">
+                <div class="text-center mb-12">
+                     <h1 class="text-4xl md:text-5xl font-bold">Financia una Meta, Impulsa una Carrera</h1>
+                     <p class="max-w-3xl mx-auto text-gray-600 mt-4">Aquí puedes ver las necesidades específicas de nuestros atletas en rotación. Tu aporte va directamente a cumplir estos objetivos. Una vez que la meta se completa, el atleta recibe el apoyo y un nuevo talento entra en rotación.</p>
+                </div>
+                
+                <!-- Funding Goals Grid -->
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Goal 1 -->
+                    <div class="bg-white rounded-2xl shadow-xl p-6 hover-lift flex flex-col">
+                        <img src="https://placehold.co/300x200/FFFFFF/000000?text=Zapatillas+de+Clavos" alt="Zapatillas de clavos" class="w-full h-40 object-contain mb-4 rounded-lg">
+                        <h3 class="font-bold text-xl">Zapatillas de Clavos Pro</h3>
+                        <p class="text-sm text-gray-500 mb-4">Para Sofía V. (Atletismo)</p>
+                        
+                        <div class="w-full bg-gray-200 rounded-full h-4 mb-2">
+                            <div class="bg-blue-600 h-4 rounded-full progress-bar" style="width: 75%"></div>
+                        </div>
+                        <div class="flex justify-between text-sm font-semibold text-gray-600 mb-4">
+                            <span>$135.000</span>
+                            <span>$180.000</span>
+                        </div>
+                        
+                        <p class="text-sm text-gray-600 mb-4 flex-grow">Unas zapatillas adecuadas pueden reducir el riesgo de lesiones y mejorar sus tiempos en décimas de segundo cruciales.</p>
+                        <a href="mailto:donaciones@boostsport.cl?subject=Aporte para Zapatillas de Sofía" class="mt-auto bg-green-500 text-white w-full py-2.5 rounded-lg font-semibold hover:bg-green-600 transition-all block text-center">Aportar a esta meta</a>
+                    </div>
+                    
+                    <!-- Goal 2 -->
+                    <div class="bg-white rounded-2xl shadow-xl p-6 hover-lift flex flex-col">
+                        <img src="https://placehold.co/300x200/FFFFFF/000000?text=Judogi+de+Competencia" alt="Judogi" class="w-full h-40 object-contain mb-4 rounded-lg">
+                        <h3 class="font-bold text-xl">Judogi de Competencia</h3>
+                        <p class="text-sm text-gray-500 mb-4">Para Benjamín R. (Judo)</p>
+                        
+                        <div class="w-full bg-gray-200 rounded-full h-4 mb-2">
+                            <div class="bg-blue-600 h-4 rounded-full progress-bar" style="width: 40%"></div>
+                        </div>
+                        <div class="flex justify-between text-sm font-semibold text-gray-600 mb-4">
+                            <span>$60.000</span>
+                            <span>$150.000</span>
+                        </div>
+                        
+                        <p class="text-sm text-gray-600 mb-4 flex-grow">Un judogi con las especificaciones de la federación internacional es obligatorio para poder competir en torneos clasificatorios.</p>
+                        <a href="mailto:donaciones@boostsport.cl?subject=Aporte para Judogi de Benjamín" class="mt-auto bg-green-500 text-white w-full py-2.5 rounded-lg font-semibold hover:bg-green-600 transition-all block text-center">Aportar a esta meta</a>
+                    </div>
+
+                    <!-- Goal 3 -->
+                    <div class="bg-white rounded-2xl shadow-xl p-6 hover-lift flex flex-col">
+                        <img src="https://placehold.co/300x200/FFFFFF/000000?text=Concentrado+Proteico" alt="Suplementos" class="w-full h-40 object-contain mb-4 rounded-lg">
+                        <h3 class="font-bold text-xl">Nutrición (3 meses)</h3>
+                        <p class="text-sm text-gray-500 mb-4">Para Isidora M. (Natación)</p>
+                        
+                        <div class="w-full bg-gray-200 rounded-full h-4 mb-2">
+                            <div class="bg-blue-600 h-4 rounded-full progress-bar" style="width: 90%"></div>
+                        </div>
+                        <div class="flex justify-between text-sm font-semibold text-gray-600 mb-4">
+                            <span>$162.000</span>
+                            <span>$180.000</span>
+                        </div>
+                        
+                        <p class="text-sm text-gray-600 mb-4 flex-grow">La suplementación guiada por un nutricionista es clave para su recuperación y para evitar el desgaste muscular.</p>
+                        <a href="mailto:donaciones@boostsport.cl?subject=Aporte para Nutrición de Isidora" class="mt-auto bg-green-500 text-white w-full py-2.5 rounded-lg font-semibold hover:bg-green-600 transition-all block text-center">Aportar a esta meta</a>
+                    </div>
+                </div>
+                <div class="text-center mt-8 text-sm text-gray-500">
+                    <p>Todas las donaciones están sujetas a una pequeña tarifa para cubrir costos operativos y de transacción, asegurando que la máxima cantidad posible llegue a los atletas.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Subscription Section from index.html, repurposed for this page -->
+        <section id="suscripcion" class="py-20 px-6 bg-gray-900 text-white">
+            <div class="container mx-auto text-center">
+                <h2 class="text-3xl md:text-4xl font-bold">O únete al Club Boosters para un Impacto Continuo</h2>
+                <p class="max-w-3xl mx-auto text-gray-300 mt-4 mb-8">Si prefieres un apoyo constante, tu suscripción mensual va a un pozo general que nos permite financiar necesidades urgentes y transversales, como viajes imprevistos, atención psicológica o inscripciones a torneos.</p>
+                <div class="max-w-md mx-auto bg-gray-800 rounded-2xl p-8 border border-blue-500 shadow-2xl">
+                    <h3 class="text-2xl font-bold">Suscripción Mensual</h3>
+                    <p class="text-blue-400 font-semibold mb-4">Desde $5.000 CLP / mes</p>
+                    <ul class="space-y-3 text-left mb-6 text-gray-300">
+                        <li class="flex items-center"><i class="fa-solid fa-check-circle text-blue-400 mr-3"></i>Aporta al pozo general de la fundación.</li>
+                        <li class="flex items-center"><i class="fa-solid fa-check-circle text-blue-400 mr-3"></i>Recibe un informe mensual detallado del uso de tu aporte.</li>
+                        <li class="flex items-center"><i class="fa-solid fa-check-circle text-blue-400 mr-3"></i>Acceso anticipado a historias de nuevos talentos.</li>
+                    </ul>
+                    <a href="mailto:suscripciones@boostsport.cl?subject=Interés en Suscripción Mensual - Club Boosters" class="w-full bg-blue-600 text-white px-8 py-3 rounded-lg text-lg font-bold hover:bg-blue-700 transition-all shadow-lg hover-lift inline-block">Quiero ser un Booster</a>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- =========== Footer (Common to all pages) =========== -->
+    <footer class="bg-gray-900 text-gray-300 py-16 px-6">
+       <!-- ... (Same footer code as index.html) ... -->
+    </footer>
+</body>
+</html>

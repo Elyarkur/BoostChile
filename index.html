@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boost Sport Chile - Conectando Talento y Oportunidad</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for social icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Favicon (Emoji) -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🚀</text></svg>">
+
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        html { scroll-behavior: smooth; }
+        .hover-lift { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .hover-lift:hover { transform: translateY(-6px); box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1); }
+        .gradient-text { background: linear-gradient(to right, #3b82f6, #1e40af); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .nav-active { color: #2563eb; font-weight: 700; }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <!-- =========== Header =========== -->
+    <header class="bg-white/90 backdrop-blur-lg shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <a href="index.html" class="text-3xl font-black gradient-text">🚀 Boost Sport Chile</a>
+            <div class="hidden md:flex space-x-6 items-center">
+                <a href="talentos.html" class="text-gray-600 hover:text-blue-600 font-semibold transition-colors">Talentos</a>
+                <a href="donaciones.html" class="text-gray-600 hover:text-blue-600 font-semibold transition-colors">Apoyar</a>
+                <a href="scouting.html" class="text-gray-600 hover:text-blue-600 font-semibold transition-colors">Scouting</a>
+                <a href="comunidad.html" class="text-gray-600 hover:text-blue-600 font-semibold transition-colors">Comunidad</a>
+                <a href="contacto.html" class="bg-blue-600 text-white px-5 py-2 rounded-full font-bold hover:bg-blue-700 transition-all shadow-md hover-lift">Contacto</a>
+            </div>
+            <div class="md:hidden">
+                <button class="text-gray-600 focus:outline-none">
+                    <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- =========== Main Content =========== -->
+    <main>
+        <!-- =========== Hero Section =========== -->
+        <section class="relative text-center py-24 md:py-40 px-6 bg-white">
+            <div class="absolute inset-0 bg-cover bg-center opacity-5" style="background-image: url('https://placehold.co/1920x1080/F0F9FF/334155?text=Estadio+Nacional');"></div>
+            <div class="relative container mx-auto">
+                <h1 class="text-4xl md:text-6xl font-black text-gray-900 leading-tight">
+                    La Plataforma del <span class="gradient-text">Futuro Deportivo</span> de Chile.
+                </h1>
+                <p class="mt-6 text-lg md:text-xl max-w-3xl mx-auto text-gray-600">
+                    Conectamos a los deportistas más promisorios con el apoyo que necesitan y la visibilidad que merecen. Solo el talento y el compromiso importan.
+                </p>
+                <div class="mt-10 flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+                    <a href="talentos.html" class="bg-blue-600 text-white px-8 py-4 rounded-full text-lg font-bold hover:bg-blue-700 transition-all shadow-xl hover-lift">Descubrir Talentos</a>
+                    <a href="scouting.html" class="bg-white text-blue-600 border-2 border-blue-500 px-8 py-4 rounded-full text-lg font-bold hover:bg-blue-50 transition-all shadow-lg hover-lift">Soy Ojeador</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- =========== Preview Talentos =========== -->
+        <section id="talentos-preview" class="py-20 px-6">
+            <div class="container mx-auto">
+                <div class="text-center mb-12">
+                     <h2 class="text-3xl md:text-4xl font-bold">Talentos en Rotación</h2>
+                     <p class="max-w-2xl mx-auto text-gray-600 mt-4">Estos son los deportistas que actualmente necesitan nuestro apoyo para alcanzar sus metas. ¡Ayúdalos a lograrlo!</p>
+                </div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Perfil 1 -->
+                    <div class="bg-white rounded-2xl shadow-xl overflow-hidden hover-lift flex flex-col">
+                        <img src="https://placehold.co/600x400/818cf8/FFFFFF?text=Sofía+V." alt="Foto de Sofía V." class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold">Sofía Vicencio</h3>
+                            <p class="font-semibold text-indigo-600">Atletismo | 400m Planos</p>
+                        </div>
+                    </div>
+                    <!-- Perfil 2 -->
+                    <div class="bg-white rounded-2xl shadow-xl overflow-hidden hover-lift flex flex-col">
+                        <img src="https://placehold.co/600x400/f87171/FFFFFF?text=Benjamín+R." alt="Foto de Benjamín R." class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold">Benjamín Rojas</h3>
+                            <p class="font-semibold text-red-600">Judo | Categoría -73kg</p>
+                        </div>
+                    </div>
+                    <!-- Perfil 3 -->
+                    <div class="bg-white rounded-2xl shadow-xl overflow-hidden hover-lift flex flex-col">
+                        <img src="https://placehold.co/600x400/fbbf24/FFFFFF?text=Isidora+M." alt="Foto de Isidora M." class="w-full h-48 object-cover">
+                         <div class="p-6">
+                            <h3 class="text-2xl font-bold">Isidora Morales</h3>
+                            <p class="font-semibold text-amber-600">Natación | 100m Libre</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center mt-12">
+                    <a href="talentos.html" class="bg-blue-100 text-blue-800 px-8 py-3 rounded-full text-lg font-bold hover:bg-blue-200 transition-all shadow-md">Ver todos los talentos →</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- =========== NEW Subscription Section =========== -->
+        <section id="suscripcion" class="py-20 px-6 bg-gray-900 text-white">
+             <div class="container mx-auto text-center">
+                <h2 class="text-3xl md:text-4xl font-bold">Únete al Club Boosters</h2>
+                <p class="max-w-3xl mx-auto text-gray-300 mt-4 mb-8">Conviértete en un pilar fundamental para nuestros deportistas. Tu suscripción mensual va a un pozo general que financia necesidades transversales y nos permite reaccionar rápido. Además, te entregamos total transparencia.</p>
+                <div class="max-w-md mx-auto bg-gray-800 rounded-2xl p-8 border border-blue-500 shadow-2xl">
+                    <h3 class="text-2xl font-bold">Suscripción Mensual</h3>
+                    <p class="text-blue-400 font-semibold mb-4">Desde $5.000 CLP / mes</p>
+                    <ul class="space-y-3 text-left mb-6 text-gray-300">
+                        <li class="flex items-center"><i class="fa-solid fa-check-circle text-blue-400 mr-3"></i>Aporta al pozo general de la fundación.</li>
+                        <li class="flex items-center"><i class="fa-solid fa-check-circle text-blue-400 mr-3"></i>Recibe un informe mensual detallado del uso de tu aporte.</li>
+                        <li class="flex items-center"><i class="fa-solid fa-check-circle text-blue-400 mr-3"></i>Acceso anticipado a historias de nuevos talentos.</li>
+                    </ul>
+                    <a href="mailto:suscripciones@boostsport.cl?subject=Interés en Suscripción Mensual - Club Boosters" class="w-full bg-blue-600 text-white px-8 py-3 rounded-lg text-lg font-bold hover:bg-blue-700 transition-all shadow-lg hover-lift inline-block">Quiero ser un Booster</a>
+                </div>
+             </div>
+        </section>
+
+
+        <!-- =========== Misión y Visión =========== -->
+        <section id="mision" class="py-20 px-6 bg-blue-50">
+            <div class="container mx-auto grid md:grid-cols-2 gap-12 items-center">
+                 <div>
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4">Nuestra Misión</h2>
+                    <p class="text-gray-600 mb-6">Democratizar el acceso a oportunidades en el deporte de alto rendimiento en Chile, creando un ecosistema donde el talento, el esfuerzo y la pasión sean los únicos requisitos para triunfar. Seleccionamos a nuestros atletas por su compromiso y los conectamos con el apoyo que necesitan para brillar.</p>
+                </div>
+                <div>
+                    <img src="https://placehold.co/600x400/3B82F6/FFFFFF?text=Nuestra+Misión" alt="Imagen representativa de la misión" class="rounded-xl shadow-2xl w-full">
+                </div>
+            </div>
+        </section>
+
+    </main>
+    
+    <!-- =========== Footer (Common to all pages) =========== -->
+    <footer id="contacto-corporativo" class="bg-gray-900 text-gray-300 py-16 px-6">
+        <div class="container mx-auto grid md:grid-cols-4 gap-8">
+            <div class="md:col-span-1">
+                <h3 class="text-2xl font-black text-white mb-2">🚀 Boost Sport Chile</h3>
+                <p class="text-gray-400">Conectando Talento y Oportunidad.</p>
+            </div>
+            <div>
+                <h4 class="font-bold text-white mb-4">Navegación</h4>
+                <a href="talentos.html" class="block text-gray-400 hover:text-white mb-2">Talentos</a>
+                <a href="donaciones.html" class="block text-gray-400 hover:text-white mb-2">Apoyar</a>
+                <a href="scouting.html" class="block text-gray-400 hover:text-white mb-2">Scouting Pro</a>
+                <a href="comunidad.html" class="block text-gray-400 hover:text-white mb-2">Comunidad</a>
+            </div>
+            <div>
+                <h4 class="font-bold text-white mb-4">Únete</h4>
+                <a href="contacto.html#postular" class="block text-gray-400 hover:text-white mb-2">Postula como Atleta</a>
+                <a href="contacto.html#mentor" class="block text-gray-400 hover:text-white mb-2">Sé un Mentor</a>
+                <a href="contacto.html#sponsor" class="block text-gray-400 hover:text-white mb-2">Conviértete en Sponsor</a>
+            </div>
+            <div>
+                <h4 class="font-bold text-white mb-4">Contacto Corporativo</h4>
+                <p class="text-gray-400 mb-2">Para alianzas y consultas de prensa:</p>
+                <a href="mailto:contacto@boostsport.cl" class="text-blue-400 hover:text-blue-300">contacto@boostsport.cl</a>
+                <div class="flex space-x-4 mt-4">
+                    <a href="https://www.instagram.com" target="_blank" class="text-gray-400 hover:text-white"><i class="fab fa-instagram fa-lg"></i></a>
+                    <a href="https://www.tiktok.com" target="_blank" class="text-gray-400 hover:text-white"><i class="fab fa-tiktok fa-lg"></i></a>
+                    <a href="https://www.linkedin.com" target="_blank" class="text-gray-400 hover:text-white"><i class="fab fa-linkedin fa-lg"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="container mx-auto text-center border-t border-gray-800 mt-12 pt-8">
+            <p>&copy; 2025 Boost Sport Chile. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

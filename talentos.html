@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Talentos - Boost Sport Chile</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🚀</text></svg>">
+
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        html { scroll-behavior: smooth; }
+        .hover-lift { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .hover-lift:hover { transform: translateY(-6px); box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1); }
+        .gradient-text { background: linear-gradient(to right, #3b82f6, #1e40af); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .nav-active { color: #2563eb; font-weight: 700; }
+        .athlete-card { transition: opacity 0.3s ease, transform 0.3s ease; } /* For filtering animation */
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <!-- =========== Header =========== -->
+    <header class="bg-white/90 backdrop-blur-lg shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <a href="index.html" class="text-3xl font-black gradient-text">🚀 Boost Sport Chile</a>
+            <div class="hidden md:flex space-x-6 items-center">
+                <a href="talentos.html" class="nav-active font-semibold transition-colors">Talentos</a>
+                <a href="donaciones.html" class="text-gray-600 hover:text-blue-600 font-semibold transition-colors">Apoyar</a>
+                <a href="scouting.html" class="text-gray-600 hover:text-blue-600 font-semibold transition-colors">Scouting</a>
+                <a href="comunidad.html" class="text-gray-600 hover:text-blue-600 font-semibold transition-colors">Comunidad</a>
+                <a href="contacto.html" class="bg-blue-600 text-white px-5 py-2 rounded-full font-bold hover:bg-blue-700 transition-all shadow-md hover-lift">Contacto</a>
+            </div>
+            <!-- Mobile Menu button would go here -->
+        </nav>
+    </header>
+
+    <!-- =========== Main Content =========== -->
+    <main>
+        <section id="talentos" class="py-20 px-6">
+            <div class="container mx-auto">
+                <div class="text-center mb-12">
+                     <h1 class="text-4xl md:text-5xl font-bold">Base de Talentos</h1>
+                     <p class="max-w-2xl mx-auto text-gray-600 mt-4">Explora los perfiles de la próxima generación de estrellas. Usa los filtros para descubrir talentos según tus criterios.</p>
+                </div>
+                
+                <!-- Interactive Filters -->
+                <div class="mb-10 p-4 bg-white rounded-xl shadow-lg flex flex-wrap gap-4 items-center justify-center">
+                    <select id="sport-filter" class="p-2 border rounded-lg bg-white">
+                        <option value="all">Todos los Deportes</option>
+                        <option value="futbol">Fútbol</option>
+                        <option value="tenis">Tenis</option>
+                        <option value="golf">Golf</option>
+                        <option value="atletismo">Atletismo</option>
+                        <option value="judo">Judo</option>
+                        <option value="natacion">Natación</option>
+                        <option value="halterofilia">Halterofilia</option>
+                    </select>
+                    <select id="gender-filter" class="p-2 border rounded-lg bg-white">
+                        <option value="all">Ambos Géneros</option>
+                        <option value="femenino">Femenino</option>
+                        <option value="masculino">Masculino</option>
+                    </select>
+                    <p id="results-count" class="font-semibold text-gray-600"></p>
+                </div>
+
+                <!-- Athlete Grid -->
+                <div id="athlete-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    
+                    <!-- Athlete 1: Ambassador -->
+                    <div class="athlete-card bg-white rounded-2xl shadow-xl overflow-hidden hover-lift flex flex-col" data-sport="futbol" data-gender="femenino">
+                        <div class="relative"><img src="https://placehold.co/600x400/1D4ED8/FFFFFF?text=Tiane+Endler" alt="Foto de Christiane Endler" class="w-full h-48 object-cover"><span class="absolute top-2 right-2 bg-yellow-400 text-yellow-900 text-xs font-bold px-3 py-1 rounded-full">EMBAJADORA</span></div>
+                        <div class="p-6 flex-grow flex flex-col"><h3 class="text-2xl font-bold">Christiane Endler</h3><p class="font-semibold text-blue-600">Fútbol | Arquera</p><p class="text-sm text-gray-500 mt-2"><b>Contexto:</b> Pionera y referente mundial, abrió puertas para el fútbol femenino en Chile.</p><div class="mt-auto pt-4 border-t border-gray-200 flex justify-center space-x-4"><a href="https://www.instagram.com/tianeendler/" target="_blank" class="text-gray-500 hover:text-pink-600 text-2xl"><i class="fab fa-instagram"></i></a></div></div>
+                    </div>
+
+                    <!-- Athlete 2: Ambassador -->
+                    <div class="athlete-card bg-white rounded-2xl shadow-xl overflow-hidden hover-lift flex flex-col" data-sport="golf" data-gender="masculino">
+                        <div class="relative"><img src="https://placehold.co/600x400/34D399/FFFFFF?text=Joaquín+N." alt="Foto de Joaquín Niemann" class="w-full h-48 object-cover"><span class="absolute top-2 right-2 bg-yellow-400 text-yellow-900 text-xs font-bold px-3 py-1 rounded-full">EMBAJADOR</span></div>
+                        <div class="p-6 flex-grow flex flex-col"><h3 class="text-2xl font-bold">Joaquín Niemann</h3><p class="font-semibold text-green-600">Golf</p><p class="text-sm text-gray-500 mt-2"><b>Contexto:</b> Dejó el golf amateur como N°1 del mundo para revolucionar el circuito profesional.</p><div class="mt-auto pt-4 border-t border-gray-200 flex justify-center space-x-4"><a href="https://www.instagram.com/joaco_niemann/" target="_blank" class="text-gray-500 hover:text-pink-600 text-2xl"><i class="fab fa-instagram"></i></a></div></div>
+                    </div>
+
+                    <!-- Athlete 3: Ambassador -->
+                    <div class="athlete-card bg-white rounded-2xl shadow-xl overflow-hidden hover-lift flex flex-col" data-sport="futbol" data-gender="masculino">
+                        <div class="relative"><img src="https://placehold.co/600x400/EF4444/FFFFFF?text=Alexis+S." alt="Foto de Alexis Sánchez" class="w-full h-48 object-cover"><span class="absolute top-2 right-2 bg-yellow-400 text-yellow-900 text-xs font-bold px-3 py-1 rounded-full">EMBAJADOR</span></div>
+                        <div class="p-6 flex-grow flex flex-col"><h3 class="text-2xl font-bold">Alexis Sánchez</h3><p class="font-semibold text-red-600">Fútbol | Delantero</p><p class="text-sm text-gray-500 mt-2"><b>Contexto:</b> Superó una infancia de escasos recursos en Tocopilla para convertirse en estrella mundial.</p><div class="mt-auto pt-4 border-t border-gray-200 flex justify-center space-x-4"><a href="https://www.instagram.com/alexis_officia1/" target="_blank" class="text-gray-500 hover:text-pink-600 text-2xl"><i class="fab fa-instagram"></i></a></div></div>
+                    </div>
+                    
+                    <!-- Athlete 4: Talent -->
+                    <div class="athlete-card bg-white rounded-2xl shadow-xl overflow-hidden hover-lift flex flex-col" data-sport="atletismo" data-gender="femenino">
+                        <div class="relative"><img src="https://placehold.co/600x400/818cf8/FFFFFF?text=Sofía+V." alt="Foto de Sofía Vicencio" class="w-full h-48 object-cover"><span class="absolute top-2 right-2 bg-indigo-500 text-white text-xs font-bold px-3 py-1 rounded-full">TALENTO BOOST</span></div>
+                        <div class="p-6 flex-grow flex flex-col"><h3 class="text-2xl font-bold">Sofía Vicencio</h3><p class="font-semibold text-indigo-600">Atletismo | 400m Planos</p><p class="text-sm text-gray-500 mt-2"><b>Contexto Socioeconómico:</b> Vive en Lota, entrena en una pista de tierra sin acceso a implementación profesional.</p><div class="mt-auto pt-4 border-t border-gray-200 flex justify-center space-x-4"><a href="#" class="text-gray-500 hover:text-pink-600 text-2xl"><i class="fab fa-instagram"></i></a></div></div>
+                    </div>
+                    
+                    <!-- Athlete 5: Talent -->
+                    <div class="athlete-card bg-white rounded-2xl shadow-xl overflow-hidden hover-lift flex flex-col" data-sport="judo" data-gender="masculino">
+                        <div class="relative"><img src="https://placehold.co/600x400/f87171/FFFFFF?text=Benjamín+R." alt="Foto de Benjamín Rojas" class="w-full h-48 object-cover"><span class="absolute top-2 right-2 bg-red-500 text-white text-xs font-bold px-3 py-1 rounded-full">TALENTO BOOST</span></div>
+                        <div class="p-6 flex-grow flex flex-col"><h3 class="text-2xl font-bold">Benjamín Rojas</h3><p class="font-semibold text-red-600">Judo | Categoría -73kg</p><p class="text-sm text-gray-500 mt-2"><b>Contexto Socioeconómico:</b> De Puente Alto, su familia realiza completadas para costear viajes a competencias.</p><div class="mt-auto pt-4 border-t border-gray-200 flex justify-center space-x-4"><a href="#" class="text-gray-500 hover:text-red-600 text-2xl"><i class="fab fa-youtube"></i></a></div></div>
+                    </div>
+
+                    <!-- Athlete 6: Talent -->
+                    <div class="athlete-card bg-white rounded-2xl shadow-xl overflow-hidden hover-lift flex flex-col" data-sport="natacion" data-gender="femenino">
+                        <div class="relative"><img src="https://placehold.co/600x400/fbbf24/FFFFFF?text=Isidora+M." alt="Foto de Isidora Morales" class="w-full h-48 object-cover"><span class="absolute top-2 right-2 bg-amber-500 text-white text-xs font-bold px-3 py-1 rounded-full">TALENTO BOOST</span></div>
+                        <div class="p-6 flex-grow flex flex-col"><h3 class="text-2xl font-bold">Isidora Morales</h3><p class="font-semibold text-amber-600">Natación | 100m Libre</p><p class="text-sm text-gray-500 mt-2"><b>Contexto Socioeconómico:</b> De Arica, debe viajar 4 horas para entrenar en una piscina olímpica.</p><div class="mt-auto pt-4 border-t border-gray-200 flex justify-center space-x-4"><a href="#" class="text-gray-500 hover:text-black text-2xl"><i class="fab fa-tiktok"></i></a></div></div>
+                    </div>
+
+                    <!-- Athlete 7: Talent -->
+                    <div class="athlete-card bg-white rounded-2xl shadow-xl overflow-hidden hover-lift flex flex-col" data-sport="tenis" data-gender="masculino">
+                        <div class="relative"><img src="https://placehold.co/600x400/38bdf8/FFFFFF?text=Martín+S." alt="Foto de Martín Soto" class="w-full h-48 object-cover"><span class="absolute top-2 right-2 bg-sky-500 text-white text-xs font-bold px-3 py-1 rounded-full">TALENTO BOOST</span></div>
+                        <div class="p-6 flex-grow flex flex-col"><h3 class="text-2xl font-bold">Martín Soto</h3><p class="font-semibold text-sky-600">Tenis</p><p class="text-sm text-gray-500 mt-2"><b>Contexto Socioeconómico:</b> De Rancagua, comparte una raqueta con su hermano para poder entrenar.</p><div class="mt-auto pt-4 border-t border-gray-200 flex justify-center space-x-4"><a href="#" class="text-gray-500 hover:text-pink-600 text-2xl"><i class="fab fa-instagram"></i></a></div></div>
+                    </div>
+
+                     <!-- Athlete 8: Talent -->
+                    <div class="athlete-card bg-white rounded-2xl shadow-xl overflow-hidden hover-lift flex flex-col" data-sport="halterofilia" data-gender="femenino">
+                        <div class="relative"><img src="https://placehold.co/600x400/c084fc/FFFFFF?text=Javiera+L." alt="Foto de Javiera López" class="w-full h-48 object-cover"><span class="absolute top-2 right-2 bg-purple-500 text-white text-xs font-bold px-3 py-1 rounded-full">TALENTO BOOST</span></div>
+                        <div class="p-6 flex-grow flex flex-col"><h3 class="text-2xl font-bold">Javiera López</h3><p class="font-semibold text-purple-600">Halterofilia</p><p class="text-sm text-gray-500 mt-2"><b>Contexto Socioeconómico:</b> De Valparaíso, entrena en un gimnasio comunitario con equipamiento obsoleto.</p><div class="mt-auto pt-4 border-t border-gray-200 flex justify-center space-x-4"><a href="#" class="text-gray-500 hover:text-pink-600 text-2xl"><i class="fab fa-instagram"></i></a></div></div>
+                    </div>
+                    
+                     <!-- Athlete 9: Talent -->
+                    <div class="athlete-card bg-white rounded-2xl shadow-xl overflow-hidden hover-lift flex flex-col" data-sport="futbol" data-gender="masculino">
+                        <div class="relative"><img src="https://placehold.co/600x400/4ade80/FFFFFF?text=Diego+C." alt="Foto de Diego Campos" class="w-full h-48 object-cover"><span class="absolute top-2 right-2 bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full">TALENTO BOOST</span></div>
+                        <div class="p-6 flex-grow flex flex-col"><h3 class="text-2xl font-bold">Diego Campos</h3><p class="font-semibold text-green-600">Fútbol | Volante</p><p class="text-sm text-gray-500 mt-2"><b>Contexto Socioeconómico:</b> De La Pintana, usa el mismo par de zapatos para ir al colegio y para entrenar.</p><div class="mt-auto pt-4 border-t border-gray-200 flex justify-center space-x-4"><a href="#" class="text-gray-500 hover:text-black text-2xl"><i class="fab fa-tiktok"></i></a></div></div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- =========== Footer (Common to all pages) =========== -->
+    <footer class="bg-gray-900 text-gray-300 py-16 px-6">
+       <!-- ... (Same footer code as index.html) ... -->
+    </footer>
+
+    <!-- =========== JavaScript for Filtering =========== -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const sportFilter = document.getElementById('sport-filter');
+            const genderFilter = document.getElementById('gender-filter');
+            const athleteGrid = document.getElementById('athlete-grid');
+            const athleteCards = Array.from(athleteGrid.getElementsByClassName('athlete-card'));
+            const resultsCount = document.getElementById('results-count');
+
+            function filterAthletes() {
+                const selectedSport = sportFilter.value;
+                const selectedGender = gender-filter.value;
+                let visibleCount = 0;
+
+                athleteCards.forEach(card => {
+                    const cardSport = card.dataset.sport;
+                    const cardGender = card.dataset.gender;
+
+                    const sportMatch = selectedSport === 'all' || cardSport === selectedSport;
+                    const genderMatch = selectedGender === 'all' || cardGender === selectedGender;
+
+                    if (sportMatch && genderMatch) {
+                        card.style.display = 'flex';
+                        visibleCount++;
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+                
+                resultsCount.textContent = `${visibleCount} resultado(s)`;
+            }
+
+            sportFilter.addEventListener('change', filterAthletes);
+            genderFilter.addEventListener('change', filterAthletes);
+
+            // Initial filter on page load
+            filterAthletes();
+        });
+    </script>
+</body>
+</html>
