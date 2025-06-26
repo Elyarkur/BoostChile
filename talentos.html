@@ -19,7 +19,8 @@
         .hover-lift:hover { transform: translateY(-6px); box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1); }
         .gradient-text { background: linear-gradient(to right, #3b82f6, #1e40af); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
         .nav-active { color: #2563eb; font-weight: 700; }
-        .athlete-card { transition: opacity 0.3s ease, transform 0.3s ease; } /* For filtering animation */
+        .athlete-card { transition: opacity 0.4s ease, transform 0.4s ease; }
+        .card-hidden { opacity: 0; transform: scale(0.95); }
     </style>
 </head>
 <body class="bg-gray-100 text-gray-800">
@@ -31,6 +32,7 @@
             <div class="hidden md:flex space-x-6 items-center">
                 <a href="talentos.html" class="nav-active font-semibold transition-colors">Talentos</a>
                 <a href="donaciones.html" class="text-gray-600 hover:text-blue-600 font-semibold transition-colors">Apoyar</a>
+                <a href="contenido.html" class="text-gray-600 hover:text-blue-600 font-semibold transition-colors">Contenido</a>
                 <a href="scouting.html" class="text-gray-600 hover:text-blue-600 font-semibold transition-colors">Scouting</a>
                 <a href="comunidad.html" class="text-gray-600 hover:text-blue-600 font-semibold transition-colors">Comunidad</a>
                 <a href="contacto.html" class="bg-blue-600 text-white px-5 py-2 rounded-full font-bold hover:bg-blue-700 transition-all shadow-md hover-lift">Contacto</a>
@@ -39,7 +41,7 @@
         </nav>
     </header>
 
-    <!-- =========== Main Content =========== -->
+    <!-- REST OF THE talentos.html PAGE ... -->
     <main>
         <section id="talentos" class="py-20 px-6">
             <div class="container mx-auto">
@@ -49,82 +51,33 @@
                 </div>
                 
                 <!-- Interactive Filters -->
-                <div class="mb-10 p-4 bg-white rounded-xl shadow-lg flex flex-wrap gap-4 items-center justify-center">
-                    <select id="sport-filter" class="p-2 border rounded-lg bg-white">
+                <div class="mb-10 p-4 bg-white rounded-xl shadow-lg flex flex-col sm:flex-row flex-wrap gap-4 items-center justify-center">
+                    <input type="text" id="name-search" placeholder="Buscar por nombre..." class="p-2 border rounded-lg w-full sm:w-auto flex-grow">
+                    <select id="sport-filter" class="p-2 border rounded-lg bg-white w-full sm:w-auto">
                         <option value="all">Todos los Deportes</option>
-                        <option value="futbol">Fútbol</option>
-                        <option value="tenis">Tenis</option>
-                        <option value="golf">Golf</option>
-                        <option value="atletismo">Atletismo</option>
-                        <option value="judo">Judo</option>
-                        <option value="natacion">Natación</option>
-                        <option value="halterofilia">Halterofilia</option>
+                        <option value="Fútbol">Fútbol</option>
+                        <option value="Tenis">Tenis</option>
+                        <option value="Golf">Golf</option>
+                        <option value="Atletismo">Atletismo</option>
+                        <option value="Judo">Judo</option>
+                        <option value="Natación">Natación</option>
+                        <option value="Halterofilia">Halterofilia</option>
                     </select>
-                    <select id="gender-filter" class="p-2 border rounded-lg bg-white">
+                    <select id="gender-filter" class="p-2 border rounded-lg bg-white w-full sm:w-auto">
                         <option value="all">Ambos Géneros</option>
-                        <option value="femenino">Femenino</option>
-                        <option value="masculino">Masculino</option>
+                        <option value="Femenino">Femenino</option>
+                        <option value="Masculino">Masculino</option>
                     </select>
-                    <p id="results-count" class="font-semibold text-gray-600"></p>
+                    <p id="results-count" class="font-semibold text-gray-600 w-full text-center sm:w-auto"></p>
                 </div>
 
                 <!-- Athlete Grid -->
                 <div id="athlete-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    
-                    <!-- Athlete 1: Ambassador -->
-                    <div class="athlete-card bg-white rounded-2xl shadow-xl overflow-hidden hover-lift flex flex-col" data-sport="futbol" data-gender="femenino">
-                        <div class="relative"><img src="https://placehold.co/600x400/1D4ED8/FFFFFF?text=Tiane+Endler" alt="Foto de Christiane Endler" class="w-full h-48 object-cover"><span class="absolute top-2 right-2 bg-yellow-400 text-yellow-900 text-xs font-bold px-3 py-1 rounded-full">EMBAJADORA</span></div>
-                        <div class="p-6 flex-grow flex flex-col"><h3 class="text-2xl font-bold">Christiane Endler</h3><p class="font-semibold text-blue-600">Fútbol | Arquera</p><p class="text-sm text-gray-500 mt-2"><b>Contexto:</b> Pionera y referente mundial, abrió puertas para el fútbol femenino en Chile.</p><div class="mt-auto pt-4 border-t border-gray-200 flex justify-center space-x-4"><a href="https://www.instagram.com/tianeendler/" target="_blank" class="text-gray-500 hover:text-pink-600 text-2xl"><i class="fab fa-instagram"></i></a></div></div>
-                    </div>
-
-                    <!-- Athlete 2: Ambassador -->
-                    <div class="athlete-card bg-white rounded-2xl shadow-xl overflow-hidden hover-lift flex flex-col" data-sport="golf" data-gender="masculino">
-                        <div class="relative"><img src="https://placehold.co/600x400/34D399/FFFFFF?text=Joaquín+N." alt="Foto de Joaquín Niemann" class="w-full h-48 object-cover"><span class="absolute top-2 right-2 bg-yellow-400 text-yellow-900 text-xs font-bold px-3 py-1 rounded-full">EMBAJADOR</span></div>
-                        <div class="p-6 flex-grow flex flex-col"><h3 class="text-2xl font-bold">Joaquín Niemann</h3><p class="font-semibold text-green-600">Golf</p><p class="text-sm text-gray-500 mt-2"><b>Contexto:</b> Dejó el golf amateur como N°1 del mundo para revolucionar el circuito profesional.</p><div class="mt-auto pt-4 border-t border-gray-200 flex justify-center space-x-4"><a href="https://www.instagram.com/joaco_niemann/" target="_blank" class="text-gray-500 hover:text-pink-600 text-2xl"><i class="fab fa-instagram"></i></a></div></div>
-                    </div>
-
-                    <!-- Athlete 3: Ambassador -->
-                    <div class="athlete-card bg-white rounded-2xl shadow-xl overflow-hidden hover-lift flex flex-col" data-sport="futbol" data-gender="masculino">
-                        <div class="relative"><img src="https://placehold.co/600x400/EF4444/FFFFFF?text=Alexis+S." alt="Foto de Alexis Sánchez" class="w-full h-48 object-cover"><span class="absolute top-2 right-2 bg-yellow-400 text-yellow-900 text-xs font-bold px-3 py-1 rounded-full">EMBAJADOR</span></div>
-                        <div class="p-6 flex-grow flex flex-col"><h3 class="text-2xl font-bold">Alexis Sánchez</h3><p class="font-semibold text-red-600">Fútbol | Delantero</p><p class="text-sm text-gray-500 mt-2"><b>Contexto:</b> Superó una infancia de escasos recursos en Tocopilla para convertirse en estrella mundial.</p><div class="mt-auto pt-4 border-t border-gray-200 flex justify-center space-x-4"><a href="https://www.instagram.com/alexis_officia1/" target="_blank" class="text-gray-500 hover:text-pink-600 text-2xl"><i class="fab fa-instagram"></i></a></div></div>
-                    </div>
-                    
-                    <!-- Athlete 4: Talent -->
-                    <div class="athlete-card bg-white rounded-2xl shadow-xl overflow-hidden hover-lift flex flex-col" data-sport="atletismo" data-gender="femenino">
-                        <div class="relative"><img src="https://placehold.co/600x400/818cf8/FFFFFF?text=Sofía+V." alt="Foto de Sofía Vicencio" class="w-full h-48 object-cover"><span class="absolute top-2 right-2 bg-indigo-500 text-white text-xs font-bold px-3 py-1 rounded-full">TALENTO BOOST</span></div>
-                        <div class="p-6 flex-grow flex flex-col"><h3 class="text-2xl font-bold">Sofía Vicencio</h3><p class="font-semibold text-indigo-600">Atletismo | 400m Planos</p><p class="text-sm text-gray-500 mt-2"><b>Contexto Socioeconómico:</b> Vive en Lota, entrena en una pista de tierra sin acceso a implementación profesional.</p><div class="mt-auto pt-4 border-t border-gray-200 flex justify-center space-x-4"><a href="#" class="text-gray-500 hover:text-pink-600 text-2xl"><i class="fab fa-instagram"></i></a></div></div>
-                    </div>
-                    
-                    <!-- Athlete 5: Talent -->
-                    <div class="athlete-card bg-white rounded-2xl shadow-xl overflow-hidden hover-lift flex flex-col" data-sport="judo" data-gender="masculino">
-                        <div class="relative"><img src="https://placehold.co/600x400/f87171/FFFFFF?text=Benjamín+R." alt="Foto de Benjamín Rojas" class="w-full h-48 object-cover"><span class="absolute top-2 right-2 bg-red-500 text-white text-xs font-bold px-3 py-1 rounded-full">TALENTO BOOST</span></div>
-                        <div class="p-6 flex-grow flex flex-col"><h3 class="text-2xl font-bold">Benjamín Rojas</h3><p class="font-semibold text-red-600">Judo | Categoría -73kg</p><p class="text-sm text-gray-500 mt-2"><b>Contexto Socioeconómico:</b> De Puente Alto, su familia realiza completadas para costear viajes a competencias.</p><div class="mt-auto pt-4 border-t border-gray-200 flex justify-center space-x-4"><a href="#" class="text-gray-500 hover:text-red-600 text-2xl"><i class="fab fa-youtube"></i></a></div></div>
-                    </div>
-
-                    <!-- Athlete 6: Talent -->
-                    <div class="athlete-card bg-white rounded-2xl shadow-xl overflow-hidden hover-lift flex flex-col" data-sport="natacion" data-gender="femenino">
-                        <div class="relative"><img src="https://placehold.co/600x400/fbbf24/FFFFFF?text=Isidora+M." alt="Foto de Isidora Morales" class="w-full h-48 object-cover"><span class="absolute top-2 right-2 bg-amber-500 text-white text-xs font-bold px-3 py-1 rounded-full">TALENTO BOOST</span></div>
-                        <div class="p-6 flex-grow flex flex-col"><h3 class="text-2xl font-bold">Isidora Morales</h3><p class="font-semibold text-amber-600">Natación | 100m Libre</p><p class="text-sm text-gray-500 mt-2"><b>Contexto Socioeconómico:</b> De Arica, debe viajar 4 horas para entrenar en una piscina olímpica.</p><div class="mt-auto pt-4 border-t border-gray-200 flex justify-center space-x-4"><a href="#" class="text-gray-500 hover:text-black text-2xl"><i class="fab fa-tiktok"></i></a></div></div>
-                    </div>
-
-                    <!-- Athlete 7: Talent -->
-                    <div class="athlete-card bg-white rounded-2xl shadow-xl overflow-hidden hover-lift flex flex-col" data-sport="tenis" data-gender="masculino">
-                        <div class="relative"><img src="https://placehold.co/600x400/38bdf8/FFFFFF?text=Martín+S." alt="Foto de Martín Soto" class="w-full h-48 object-cover"><span class="absolute top-2 right-2 bg-sky-500 text-white text-xs font-bold px-3 py-1 rounded-full">TALENTO BOOST</span></div>
-                        <div class="p-6 flex-grow flex flex-col"><h3 class="text-2xl font-bold">Martín Soto</h3><p class="font-semibold text-sky-600">Tenis</p><p class="text-sm text-gray-500 mt-2"><b>Contexto Socioeconómico:</b> De Rancagua, comparte una raqueta con su hermano para poder entrenar.</p><div class="mt-auto pt-4 border-t border-gray-200 flex justify-center space-x-4"><a href="#" class="text-gray-500 hover:text-pink-600 text-2xl"><i class="fab fa-instagram"></i></a></div></div>
-                    </div>
-
-                     <!-- Athlete 8: Talent -->
-                    <div class="athlete-card bg-white rounded-2xl shadow-xl overflow-hidden hover-lift flex flex-col" data-sport="halterofilia" data-gender="femenino">
-                        <div class="relative"><img src="https://placehold.co/600x400/c084fc/FFFFFF?text=Javiera+L." alt="Foto de Javiera López" class="w-full h-48 object-cover"><span class="absolute top-2 right-2 bg-purple-500 text-white text-xs font-bold px-3 py-1 rounded-full">TALENTO BOOST</span></div>
-                        <div class="p-6 flex-grow flex flex-col"><h3 class="text-2xl font-bold">Javiera López</h3><p class="font-semibold text-purple-600">Halterofilia</p><p class="text-sm text-gray-500 mt-2"><b>Contexto Socioeconómico:</b> De Valparaíso, entrena en un gimnasio comunitario con equipamiento obsoleto.</p><div class="mt-auto pt-4 border-t border-gray-200 flex justify-center space-x-4"><a href="#" class="text-gray-500 hover:text-pink-600 text-2xl"><i class="fab fa-instagram"></i></a></div></div>
-                    </div>
-                    
-                     <!-- Athlete 9: Talent -->
-                    <div class="athlete-card bg-white rounded-2xl shadow-xl overflow-hidden hover-lift flex flex-col" data-sport="futbol" data-gender="masculino">
-                        <div class="relative"><img src="https://placehold.co/600x400/4ade80/FFFFFF?text=Diego+C." alt="Foto de Diego Campos" class="w-full h-48 object-cover"><span class="absolute top-2 right-2 bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full">TALENTO BOOST</span></div>
-                        <div class="p-6 flex-grow flex flex-col"><h3 class="text-2xl font-bold">Diego Campos</h3><p class="font-semibold text-green-600">Fútbol | Volante</p><p class="text-sm text-gray-500 mt-2"><b>Contexto Socioeconómico:</b> De La Pintana, usa el mismo par de zapatos para ir al colegio y para entrenar.</p><div class="mt-auto pt-4 border-t border-gray-200 flex justify-center space-x-4"><a href="#" class="text-gray-500 hover:text-black text-2xl"><i class="fab fa-tiktok"></i></a></div></div>
-                    </div>
-
+                    <!-- Athlete cards will be dynamically inserted here by JavaScript -->
+                </div>
+                <div id="no-results" class="hidden text-center py-16">
+                    <p class="text-2xl font-bold text-gray-700">No se encontraron atletas</p>
+                    <p class="text-gray-500 mt-2">Intenta con otros filtros o un nombre diferente.</p>
                 </div>
             </div>
         </section>
@@ -135,43 +88,133 @@
        <!-- ... (Same footer code as index.html) ... -->
     </footer>
 
-    <!-- =========== JavaScript for Filtering =========== -->
+    <!-- =========== JavaScript for Filtering and Dynamic Content =========== -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+            // --- DATABASE ---
+            const athletes = [
+                // Embajadores
+                { name: 'Christiane Endler', sport: 'Fútbol', gender: 'Femenino', status: 'embajador', context: 'Pionera y referente mundial, abrió puertas para el fútbol femenino en Chile.', image: 'https://placehold.co/600x400/1D4ED8/FFFFFF?text=Tiane+Endler', social: { instagram: 'https://www.instagram.com/tianeendler/' }},
+                { name: 'Joaquín Niemann', sport: 'Golf', gender: 'Masculino', status: 'embajador', context: 'Dejó el golf amateur como N°1 del mundo para revolucionar el circuito profesional.', image: 'https://placehold.co/600x400/34D399/FFFFFF?text=Joaquín+N.', social: { instagram: 'https://www.instagram.com/joaco_niemann/' }},
+                { name: 'Alexis Sánchez', sport: 'Fútbol', gender: 'Masculino', status: 'embajador', context: 'Superó una infancia de escasos recursos en Tocopilla para convertirse en estrella mundial.', image: 'https://placehold.co/600x400/EF4444/FFFFFF?text=Alexis+S.', social: { instagram: 'https://www.instagram.com/alexis_officia1/' }},
+
+                // Talentos Boost - Fútbol
+                { name: 'Diego Campos', sport: 'Fútbol', gender: 'Masculino', status: 'talento', context: 'De La Pintana, usa el mismo par de zapatos para ir al colegio y para entrenar.', image: 'https://placehold.co/600x400/4ade80/FFFFFF?text=Diego+C.', social: { tiktok: '#' }},
+                { name: 'Carla Guerrero', sport: 'Fútbol', gender: 'Femenino', status: 'talento', context: 'De Peñalolén, lidera un equipo local y sueña con jugar en el extranjero.', image: 'https://placehold.co/600x400/a3e635/FFFFFF?text=Carla+G.', social: { instagram: '#' }},
+                { name: 'Ben Brereton Díaz', sport: 'Fútbol', gender: 'Masculino', status: 'talento', context: 'Nacido en Inglaterra, eligió representar a Chile, mostrando un compromiso inmenso.', image: 'https://placehold.co/600x400/f87171/FFFFFF?text=Ben+B.', social: { instagram: '#' }},
+                
+                // Talentos Boost - Atletismo
+                { name: 'Sofía Vicencio', sport: 'Atletismo', gender: 'Femenino', status: 'talento', context: 'Vive en Lota, entrena en una pista de tierra sin acceso a implementación profesional.', image: 'https://placehold.co/600x400/818cf8/FFFFFF?text=Sofía+V.', social: { instagram: '#' }},
+                { name: 'Tomás González', sport: 'Atletismo', gender: 'Masculino', status: 'talento', context: 'De Coquimbo, sus padres son pescadores y apoyan su carrera con mucho esfuerzo.', image: 'https://placehold.co/600x400/a78bfa/FFFFFF?text=Tomás+G.', social: { instagram: '#' }},
+                { name: 'Martina Weil', sport: 'Atletismo', gender: 'Femenino', status: 'talento', context: 'Hija de atletas, busca forjar su propio camino y necesita apoyo para giras internacionales.', image: 'https://placehold.co/600x400/c4b5fd/FFFFFF?text=Martina+W.', social: { instagram: '#' }},
+                { name: 'Santiago Ford', sport: 'Atletismo', gender: 'Masculino', status: 'talento', context: 'Llegó a Chile buscando una oportunidad y se convirtió en campeón panamericano a base de esfuerzo.', image: 'https://placehold.co/600x400/a5b4fc/FFFFFF?text=Santiago+F.', social: { instagram: '#' }},
+                { name: 'Isidora Jiménez', sport: 'Atletismo', gender: 'Femenino', status: 'talento', context: 'De Concepción, combina sus estudios universitarios con el entrenamiento de alto rendimiento.', image: 'https://placehold.co/600x400/7dd3fc/FFFFFF?text=Isidora+J.', social: { instagram: '#' }},
+                
+                // Talentos Boost - Tenis
+                { name: 'Martín Soto', sport: 'Tenis', gender: 'Masculino', status: 'talento', context: 'De Rancagua, comparte una raqueta con su hermano para poder entrenar.', image: 'https://placehold.co/600x400/38bdf8/FFFFFF?text=Martín+S.', social: { instagram: '#' }},
+                { name: 'Valentina Mella', sport: 'Tenis', gender: 'Femenino', status: 'talento', context: 'De Iquique, aprendió a jugar en canchas públicas y necesita financiamiento para giras.', image: 'https://placehold.co/600x400/f472b6/FFFFFF?text=Valentina+M.', social: { instagram: '#' }},
+                { name: 'Alejandro Tabilo', sport: 'Tenis', gender: 'Masculino', status: 'talento', context: 'Nacido en Canadá, se mudó a Chile para desarrollar su carrera con recursos limitados.', image: 'https://placehold.co/600x400/f0abfc/FFFFFF?text=Alejandro+T.', social: { instagram: '#' }},
+                { name: 'Daniela Seguel', sport: 'Tenis', gender: 'Femenino', status: 'talento', context: 'Ha superado tragedias personales y sigue luchando en el circuito con enorme resiliencia.', image: 'https://placehold.co/600x400/e879f9/FFFFFF?text=Daniela+S.', social: { instagram: '#' }},
+                { name: 'Nicolás Jarry', sport: 'Tenis', gender: 'Masculino', status: 'talento', context: 'Nieto de una leyenda del tenis, busca escribir su propia historia superando la presión.', image: 'https://placehold.co/600x400/d8b4fe/FFFFFF?text=Nicolás+J.', social: { instagram: '#' }},
+                
+                // Talentos Boost - Judo
+                { name: 'Benjamín Rojas', sport: 'Judo', gender: 'Masculino', status: 'talento', context: 'De Puente Alto, su familia realiza completadas para costear viajes a competencias.', image: 'https://placehold.co/600x400/fca5a5/FFFFFF?text=Benjamín+R.', social: { youtube: '#' }},
+                { name: 'Catalina Bravo', sport: 'Judo', gender: 'Femenino', status: 'talento', context: 'De Temuco, viaja en bus cada fin de semana a Santiago para entrenar con la selección.', image: 'https://placehold.co/600x400/fb923c/FFFFFF?text=Catalina+B.', social: { youtube: '#' }},
+                { name: 'Mary Dee Vargas', sport: 'Judo', gender: 'Femenino', status: 'talento', context: 'Fue la primera judoka chilena en clasificar a unos JJOO, abriendo un camino con escaso apoyo inicial.', image: 'https://placehold.co/600x400/fdba74/FFFFFF?text=Mary+Dee+V.', social: { instagram: '#' }},
+                
+                // Talentos Boost - Natación
+                { name: 'Isidora Morales', sport: 'Natación', gender: 'Femenino', status: 'talento', context: 'De Arica, debe viajar 4 horas para entrenar en una piscina olímpica.', image: 'https://placehold.co/600x400/fbbf24/FFFFFF?text=Isidora+M.', social: { tiktok: '#' }},
+                { name: 'Kristel Köbrich', sport: 'Natación', gender: 'Femenino', status: 'embajador', context: 'Una leyenda viviente, ha competido en 5 JJOO, a menudo financiando su propia carrera.', image: 'https://placehold.co/600x400/facc15/FFFFFF?text=Kristel+K.', social: { instagram: '#' }},
+                { name: 'Gabriel Araya', sport: 'Natación', gender: 'Masculino', status: 'talento', context: 'De Puerto Montt, entrena en aguas abiertas por falta de piscinas temperadas cerca.', image: 'https://placehold.co/600x400/a3e635/FFFFFF?text=Gabriel+A.', social: { instagram: '#' }},
+                
+                // Talentos Boost - Halterofilia
+                { name: 'Javiera López', sport: 'Halterofilia', gender: 'Femenino', status: 'talento', context: 'De Valparaíso, entrena en un gimnasio comunitario con equipamiento obsoleto.', image: 'https://placehold.co/600x400/c084fc/FFFFFF?text=Javiera+L.', social: { instagram: '#' }},
+                { name: 'Arley Méndez', sport: 'Halterofilia', gender: 'Masculino', status: 'talento', context: 'Nacionalizado chileno, superó la falta de recursos para ser campeón mundial.', image: 'https://placehold.co/600x400/d8b4fe/FFFFFF?text=Arley+M.', social: { instagram: '#' }},
+                { name: 'María Fernanda Valdés', sport: 'Halterofilia', gender: 'Femenino', status: 'talento', context: 'Ha sido campeona mundial y medallista panamericana, a menudo con apoyo intermitente.', image: 'https://placehold.co/600x400/e879f9/FFFFFF?text=Ma.+Fernanda+V.', social: { instagram: '#' }},
+            ];
+
+            // --- DOM Elements ---
+            const nameSearch = document.getElementById('name-search');
             const sportFilter = document.getElementById('sport-filter');
             const genderFilter = document.getElementById('gender-filter');
             const athleteGrid = document.getElementById('athlete-grid');
-            const athleteCards = Array.from(athleteGrid.getElementsByClassName('athlete-card'));
             const resultsCount = document.getElementById('results-count');
+            const noResultsDiv = document.getElementById('no-results');
 
-            function filterAthletes() {
-                const selectedSport = sportFilter.value;
-                const selectedGender = gender-filter.value;
-                let visibleCount = 0;
+            // --- FUNCTIONS ---
+            
+            // Function to render athlete cards
+            function renderAthletes(athleteList) {
+                athleteGrid.innerHTML = ''; // Clear the grid first
 
-                athleteCards.forEach(card => {
-                    const cardSport = card.dataset.sport;
-                    const cardGender = card.dataset.gender;
+                if (athleteList.length === 0) {
+                    noResultsDiv.style.display = 'block';
+                } else {
+                    noResultsDiv.style.display = 'none';
+                }
 
-                    const sportMatch = selectedSport === 'all' || cardSport === selectedSport;
-                    const genderMatch = selectedGender === 'all' || cardGender === selectedGender;
-
-                    if (sportMatch && genderMatch) {
-                        card.style.display = 'flex';
-                        visibleCount++;
+                athleteList.forEach(athlete => {
+                    // Status Badge
+                    let statusBadge = '';
+                    if (athlete.status === 'embajador') {
+                        statusBadge = `<span class="absolute top-2 right-2 bg-yellow-400 text-yellow-900 text-xs font-bold px-3 py-1 rounded-full">EMBAJADOR</span>`;
                     } else {
-                        card.style.display = 'none';
+                        statusBadge = `<span class="absolute top-2 right-2 bg-blue-500 text-white text-xs font-bold px-3 py-1 rounded-full">TALENTO BOOST</span>`;
                     }
+                    
+                    // Social Links
+                    let socialLinksHtml = '';
+                    if (athlete.social) {
+                        if (athlete.social.instagram) socialLinksHtml += `<a href="${athlete.social.instagram}" target="_blank" class="text-gray-500 hover:text-pink-600 text-2xl"><i class="fab fa-instagram"></i></a>`;
+                        if (athlete.social.tiktok) socialLinksHtml += `<a href="${athlete.social.tiktok}" target="_blank" class="text-gray-500 hover:text-black text-2xl"><i class="fab fa-tiktok"></i></a>`;
+                        if (athlete.social.youtube) socialLinksHtml += `<a href="${athlete.social.youtube}" target="_blank" class="text-gray-500 hover:text-red-600 text-2xl"><i class="fab fa-youtube"></i></a>`;
+                    }
+                    
+                    const card = `
+                        <div class="athlete-card bg-white rounded-2xl shadow-xl overflow-hidden hover-lift flex flex-col">
+                            <div class="relative">
+                                <img src="${athlete.image}" alt="Foto de ${athlete.name}" class="w-full h-48 object-cover">
+                                ${statusBadge}
+                            </div>
+                            <div class="p-6 flex-grow flex flex-col">
+                                <h3 class="text-2xl font-bold">${athlete.name}</h3>
+                                <p class="font-semibold text-blue-600">${athlete.sport}</p>
+                                <p class="text-sm text-gray-500 mt-2"><b>Contexto:</b> ${athlete.context}</p>
+                                <div class="mt-auto pt-4 border-t border-gray-200 flex justify-center space-x-4">
+                                    ${socialLinksHtml}
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                    athleteGrid.innerHTML += card;
                 });
-                
-                resultsCount.textContent = `${visibleCount} resultado(s)`;
             }
 
-            sportFilter.addEventListener('change', filterAthletes);
-            genderFilter.addEventListener('change', filterAthletes);
+            // Function to filter and then render
+            function filterAndRender() {
+                const sportValue = sportFilter.value;
+                const genderValue = genderFilter.value;
+                const searchValue = nameSearch.value.toLowerCase();
 
-            // Initial filter on page load
-            filterAthletes();
+                const filteredAthletes = athletes.filter(athlete => {
+                    const nameMatch = athlete.name.toLowerCase().includes(searchValue);
+                    const sportMatch = sportValue === 'all' || athlete.sport === sportValue;
+                    const genderMatch = genderValue === 'all' || athlete.gender === genderValue;
+                    return nameMatch && sportMatch && genderMatch;
+                });
+                
+                resultsCount.textContent = `${filteredAthletes.length} resultado(s) encontrado(s)`;
+                renderAthletes(filteredAthletes);
+            }
+
+            // --- EVENT LISTENERS ---
+            nameSearch.addEventListener('keyup', filterAndRender);
+            sportFilter.addEventListener('change', filterAndRender);
+            genderFilter.addEventListener('change', filterAndRender);
+
+            // --- INITIAL RENDER ---
+            renderAthletes(athletes);
+            resultsCount.textContent = `${athletes.length} resultado(s) encontrado(s)`;
         });
     </script>
 </body>
