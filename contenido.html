@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contenido - Boost Sport Chile</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🚀</text></svg>">
+
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .gradient-text { background: linear-gradient(to right, #3b82f6, #1e40af); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .nav-active { color: #2563eb; font-weight: 700; }
+        .hover-lift { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .hover-lift:hover { transform: translateY(-6px); box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1); }
+        .video-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; background: #000; }
+        .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+    </style>
+</head>
+<body class="bg-gray-100">
+
+    <!-- =========== Header =========== -->
+    <header class="bg-white/90 backdrop-blur-lg shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <a href="index.html" class="text-3xl font-black gradient-text">🚀 Boost Sport Chile</a>
+            <div class="hidden md:flex space-x-6 items-center">
+                <a href="talentos.html" class="text-gray-600 hover:text-blue-600 font-semibold transition-colors">Talentos</a>
+                <a href="donaciones.html" class="text-gray-600 hover:text-blue-600 font-semibold transition-colors">Apoyar</a>
+                <a href="contenido.html" class="nav-active font-semibold transition-colors">Contenido</a>
+                <a href="scouting.html" class="text-gray-600 hover:text-blue-600 font-semibold transition-colors">Scouting</a>
+                <a href="comunidad.html" class="text-gray-600 hover:text-blue-600 font-semibold transition-colors">Comunidad</a>
+                <a href="contacto.html" class="bg-blue-600 text-white px-5 py-2 rounded-full font-bold hover:bg-blue-700 transition-all shadow-md">Contacto</a>
+            </div>
+            <!-- Mobile Menu button -->
+        </nav>
+    </header>
+
+    <!-- =========== Main Content =========== -->
+    <main class="py-20 px-6">
+        <div class="container mx-auto">
+            <div class="text-center mb-12">
+                <h1 class="text-4xl md:text-5xl font-bold">Creación de Contenido</h1>
+                <p class="max-w-3xl mx-auto text-gray-600 mt-4">¡Bienvenido al lado B de Boost Sport! Aquí te mostramos el esfuerzo, la diversión y la personalidad de nuestros atletas a través de retos, trends y contenido exclusivo.</p>
+            </div>
+
+            <!-- Featured Video Section -->
+            <section class="mb-16">
+                <h2 class="text-3xl font-bold mb-4">Video Destacado</h2>
+                <div class="video-container rounded-xl shadow-2xl overflow-hidden">
+                    <!-- Reemplaza el `src` con tu video de YouTube. He usado uno de los Juegos Panamericanos como ejemplo -->
+                    <iframe src="https://www.youtube.com/embed/LXb3EKWsInQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <div class="mt-4">
+                    <h3 class="text-2xl font-bold">El Camino a la Gloria: Documental de Santiago 2023</h3>
+                    <p class="text-gray-600">Un vistazo al esfuerzo y la emoción que viven nuestros deportistas en la alta competencia.</p>
+                </div>
+            </section>
+
+            <!-- Content Grid -->
+            <section>
+                <h2 class="text-3xl font-bold mb-8">Más Contenido</h2>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    
+                    <!-- Content Card 1: TikTok Challenge -->
+                    <div class="bg-white rounded-2xl shadow-xl overflow-hidden hover-lift flex flex-col">
+                        <div class="relative">
+                            <img src="https://placehold.co/600x400/EF4444/FFFFFF?text=TikTok+Challenge" alt="Reto de TikTok" class="w-full h-48 object-cover">
+                            <div class="absolute inset-0 bg-black bg-opacity-20 flex items-center justify-center">
+                                <i class="fab fa-tiktok text-white text-6xl"></i>
+                            </div>
+                        </div>
+                        <div class="p-6 flex-grow flex flex-col">
+                            <h3 class="text-xl font-bold">#BoostChallenge con Alexis Sánchez</h3>
+                            <p class="text-gray-600 text-sm mt-1 flex-grow">El "Niño Maravilla" nos muestra su mejor truco. ¿Puedes imitarlo?</p>
+                            <a href="#" class="mt-4 bg-gray-900 text-white w-full py-2 rounded-lg font-semibold hover:bg-black transition-all block text-center">Ver en TikTok</a>
+                        </div>
+                    </div>
+
+                    <!-- Content Card 2: Instagram Story -->
+                    <div class="bg-white rounded-2xl shadow-xl overflow-hidden hover-lift flex flex-col">
+                        <div class="relative">
+                            <img src="https://placehold.co/600x400/1D4ED8/FFFFFF?text=Q&A+con+Tiane" alt="Preguntas y Respuestas" class="w-full h-48 object-cover">
+                             <div class="absolute inset-0 bg-black bg-opacity-20 flex items-center justify-center">
+                                <i class="fab fa-instagram text-white text-6xl"></i>
+                            </div>
+                        </div>
+                        <div class="p-6 flex-grow flex flex-col">
+                            <h3 class="text-xl font-bold">Q&A con Tiane Endler</h3>
+                            <p class="text-gray-600 text-sm mt-1 flex-grow">La mejor arquera del mundo responde las preguntas de la comunidad. ¡Conoce sus secretos!</p>
+                            <a href="#" class="mt-4 bg-gradient-to-r from-pink-500 to-yellow-500 text-white w-full py-2 rounded-lg font-semibold hover:opacity-90 transition-all block text-center">Ver en Instagram</a>
+                        </div>
+                    </div>
+
+                    <!-- Content Card 3: YouTube Training -->
+                    <div class="bg-white rounded-2xl shadow-xl overflow-hidden hover-lift flex flex-col">
+                        <div class="relative">
+                            <img src="https://placehold.co/600x400/c084fc/FFFFFF?text=Entrenamiento+Javiera" alt="Entrenamiento" class="w-full h-48 object-cover">
+                             <div class="absolute inset-0 bg-black bg-opacity-20 flex items-center justify-center">
+                                <i class="fab fa-youtube text-white text-6xl"></i>
+                            </div>
+                        </div>
+                        <div class="p-6 flex-grow flex flex-col">
+                            <h3 class="text-xl font-bold">Un día de entrenamiento con Javiera L.</h3>
+                            <p class="text-gray-600 text-sm mt-1 flex-grow">Sigue la rutina de fuerza y dedicación de nuestra futura campeona de halterofilia.</p>
+                            <a href="#" class="mt-4 bg-red-600 text-white w-full py-2 rounded-lg font-semibold hover:bg-red-700 transition-all block text-center">Ver en YouTube</a>
+                        </div>
+                    </div>
+                     <!-- Add more cards as needed -->
+
+                </div>
+            </section>
+        </div>
+    </main>
+    
+    <!-- =========== Footer =========== -->
+    <footer class="bg-gray-900 text-gray-300 py-16 px-6">
+       <!-- Reemplaza esto con tu código de footer común si es diferente -->
+       <div class="container mx-auto text-center">
+           <p>&copy; 2025 Boost Sport Chile. Todos los derechos reservados.</p>
+       </div>
+    </footer>
+</body>
+</html>
